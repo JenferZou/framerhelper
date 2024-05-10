@@ -35,6 +35,6 @@ public interface AgritainmentMapper {
     */
     List<Agritainment> selectAll(Agritainment agritainment);
 
-    @Select("select * from agritainment order by id desc limit 6")
+    @Select("select * from agritainment order by id desc limit 8")
     List<Agritainment> selectTop6();
 }
