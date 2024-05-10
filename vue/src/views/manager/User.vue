@@ -130,21 +130,6 @@ export default {
       this.fromVisible = true   // 打开弹窗
     },
     save() {   // 保存按钮触发的逻辑  它会触发新增或者更新
-      //ES6允许使用“箭头”（=>）定义函数
-      /*var f = a = > a等同于
-        var f = function(a){
-          return a;
-        }
-       **************************
-       如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。
-       *******************无形参*******************
-        var f = () => 5;等同于var f = function () { return 5 };
-       *******************多个形参*******************
-        var sum = (num1, num2) => num1 + num2;等同于
-        var sum = function(num1, num2) {
-            return num1 + num2;
-         };
-      */
       this.$refs.formRef.validate((valid) => {
         if (valid) {
           this.$request({

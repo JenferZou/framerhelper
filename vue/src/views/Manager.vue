@@ -23,7 +23,7 @@
           </div>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item @click.native="goToPerson">个人信息</el-dropdown-item>
-            <el-dropdown-item @click.native="$router.push('/password')">修改密码</el-dropdown-item>
+            <el-dropdown-item @click.native="$router.push('/admin/password')">修改密码</el-dropdown-item>
             <el-dropdown-item @click.native="logout">退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
@@ -35,7 +35,7 @@
       <!--  侧边栏  -->
       <div class="manager-main-left">
         <el-menu router style="border: none" :default-active="$route.path">
-          <el-menu-item index="/home">
+          <el-menu-item index="/admin/home">
             <i class="el-icon-s-home"></i>
             <span slot="title">系统首页</span>
           </el-menu-item>
@@ -43,27 +43,24 @@
             <template slot="title">
               <i class="el-icon-s-platform"></i><span>信息管理</span>
             </template>
-            <el-menu-item index="/notice">公告信息</el-menu-item>
-            <el-menu-item index="/information">扶贫资讯</el-menu-item>
-            <el-menu-item index="/policy">扶贫政策</el-menu-item>
-            <el-menu-item index="/agritainment">农家乐信息</el-menu-item>
-            <el-menu-item index="/goods">扶贫商品</el-menu-item>
-            <el-menu-item index="/orders">订单信息</el-menu-item>
-            <el-menu-item index="/comment">政策评论</el-menu-item>
+            <el-menu-item index="/admin/notice">公告信息</el-menu-item>
+            <el-menu-item index="/admin/information">扶贫资讯</el-menu-item>
+            <el-menu-item index="/admin/policy">扶贫政策</el-menu-item>
+            <el-menu-item index="/admin/comment">政策评论</el-menu-item>
           </el-submenu>
           <el-submenu index="apply">
             <template slot="title">
               <i class="el-icon-s-claim"></i><span>审核申请</span>
             </template>
-            <el-menu-item index="/poorApply">贫困户申请</el-menu-item>
-            <el-menu-item index="/projectApply">扶贫项目申请</el-menu-item>
+            <el-menu-item index="/admin/poorApply">贫困户申请</el-menu-item>
+            <el-menu-item index="/admin/projectApply">扶贫项目申请</el-menu-item>
           </el-submenu>
           <el-submenu index="user">
             <template slot="title">
               <i class="el-icon-s-custom"></i><span>用户管理</span>
             </template>
             <el-menu-item index="/admin">管理员信息</el-menu-item>
-            <el-menu-item index="/user">用户信息</el-menu-item>
+            <el-menu-item index="/admin/user">用户信息</el-menu-item>
           </el-submenu>
         </el-menu>
       </div>
@@ -96,7 +93,7 @@ export default {
     },
     goToPerson() {
       if (this.user.role === 'ADMIN') {
-        this.$router.push('/adminPerson')
+        this.$router.push('/admin/adminPerson')
       }
     },
     logout() {

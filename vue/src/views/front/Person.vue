@@ -3,7 +3,6 @@
     <el-card style="width: 50%; margin: 30px auto">
       <div style="text-align: right; margin-bottom: 20px">
         <el-button type="primary" @click="updatePassword">修改密码</el-button>
-        <el-button type="warning" @click="rechargeInit">充 值</el-button>  <!--类型warning  方法rechargeInit充值初始化，methods里面具体定义-->
       </div>
       <el-form :model="user" label-width="80px" style="padding-right: 20px">
         <div style="margin: 15px; text-align: center">
@@ -35,9 +34,6 @@
         <el-form-item label="身份" prop="level">
           <el-input v-model="user.level"  disabled></el-input>
         </el-form-item>
-        <el-form-item label="余额" prop="account">
-          <el-input v-model="user.account" placeholder="余额" disabled></el-input>
-        </el-form-item>
         <div style="text-align: center; margin-bottom: 20px">
           <el-button type="primary" @click="update">保 存</el-button>
         </div>
@@ -63,43 +59,12 @@
       </div>
     </el-dialog>
 
-<!--    充值 对话框-->
-    <el-dialog title="充值信息" :visible.sync="fromVisible" width="40%" :close-on-click-modal="false" destroy-on-close>
-      <el-form label-width="100px" style="padding-right: 50px">
-        <el-form-item prop="account" label="充值金额">
-          <el-input v-model="account" autocomplete="off"></el-input>
-        </el-form-item>
-        <el-form-item prop="type" label="支付方式">
-          <el-radio v-model="type" label="支付宝">支付宝</el-radio>  <!--Element官网找一个 单选框 样式；绑定type-->
-          <el-radio v-model="type" label="微信">微信</el-radio>
-        </el-form-item>
-      </el-form>
-      <div slot="footer" class="dialog-footer">
-        <el-button @click="fromVisible = false">取 消</el-button>
-        <el-button type="primary" @click="recharge">确 定</el-button>  <!--点击确认后使用recharge方法，实现充值操作方法逻辑-->
-      </div>
-    </el-dialog>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    //ES6允许使用“箭头”（=>）定义函数
-    /*var f = a = > a等同于
-      var f = function(a){
-        return a;
-      }
-     **************************
-     如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。
-     *******************无形参*******************
-      var f = () => 5;等同于var f = function () { return 5 };
-     *******************多个形参*******************
-      var sum = (num1, num2) => num1 + num2;等同于
-      var sum = function(num1, num2) {
-          return num1 + num2;
-       };
-    */
     const validatePassword = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请确认密码'))

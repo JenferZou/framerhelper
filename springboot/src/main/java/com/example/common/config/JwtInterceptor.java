@@ -37,6 +37,14 @@ public class JwtInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         // 1. 从http请求的header中获取token，token是前端发来的令牌，用以校验
+        String uri = request.getRequestURI();
+        if(uri.contains("/notice/selectAll")||uri.contains("/information/top6")||uri.contains("/policy/top6")
+        ||uri.contains("/agritainment/top6")||uri.contains("/goods/selectAll")||uri.contains("/information/selectById/")
+        ||uri.contains("/policy/selectById/")||uri.contains("/praise/selectAll")||uri.contains("/comment/selectByPolicyId")
+                ||uri.contains("/agritainment/selectById")
+        )
+            return true;
+
         String token = request.getHeader(Constants.TOKEN);
         if (ObjectUtil.isEmpty(token)) {
             // 如果没拿到，从参数里再拿一次

@@ -52,21 +52,7 @@ export default {
   },
   methods: {
     login() {  /*点击登录按钮后，就运行登录login函数；login函数先去验证表单，然后调用接口，把form传过去*/
-      //ES6允许使用“箭头”（=>）定义函数
-      /*var f = a = > a等同于
-        var f = function(a){
-          return a;
-        }
-       **************************
-       如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。
-       *******************无形参*******************
-        var f = () => 5;等同于var f = function () { return 5 };
-       *******************多个形参*******************
-        var sum = (num1, num2) => num1 + num2;等同于
-        var sum = function(num1, num2) {
-            return num1 + num2;
-         };
-      */
+
       this.$refs['formRef'].validate((valid) => {
         if (valid) {
           // 验证通过
@@ -74,7 +60,7 @@ export default {
             if (res.code === '200') {
               localStorage.setItem("xm-user", JSON.stringify(res.data))  // 存储用户数据
               if (res.data.role === 'ADMIN') {
-                this.$router.push('/home')  // 跳转主页
+                this.$router.push('/admin/home')  // 跳转主页
               } else {
                 location.href = '/front/home'
               }

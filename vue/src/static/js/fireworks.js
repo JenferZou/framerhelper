@@ -1,4 +1,4 @@
-function clickEffect() {
+/*function clickEffect() {
     let balls = [];
     let longPressed = false;
     let longPress;
@@ -131,5 +131,5 @@ function clickEffect() {
         }
     }
 }
-clickEffect();//调用
+clickEffect();//调用*/
 

@@ -31,9 +31,6 @@
             </div>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>
-                <div style="text-decoration: none" @click="navTo('/front/orders')">我的订单</div>
-              </el-dropdown-item>
-              <el-dropdown-item>
                 <div style="text-decoration: none" @click="navTo('/front/praise')">历史点赞</div>
               </el-dropdown-item>
               <el-dropdown-item>
