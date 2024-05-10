@@ -3,6 +3,7 @@
 <template>
   <div class="main-content">
     <div style="width: 65%; margin: 20px auto">
+      <div><a href="/">&lt返回主页</a></div>
       <div style="text-align: center">
         <span style="font-size: 22px">{{ informationData.name }}</span>
         <span style="margin-left: 50px; color: #666666">{{ informationData.time }}</span>

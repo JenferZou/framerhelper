@@ -4,6 +4,7 @@
   <div class="main-content">
     <div style="width: 65%; margin: 20px auto">
       <div style="text-align: center">
+        <div style="text-align: left"><a href="/">&lt返回主页</a></div>
         <span style="font-size: 22px">{{ agritainmentData.name }}</span>
         <span style="margin-left: 50px; color: #666666">发布时间：{{ agritainmentData.time }}</span>
       </div>

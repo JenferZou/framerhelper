@@ -54,24 +54,35 @@
                 </div>  <!--这里flex占一份-->
             </div>
 
-            <!--    第三块 魅力农家乐-->
-            <div style="text-align: center; color: #19a14b; font-size: 25px; font-weight: 550; margin: 40px 0">
-                魅力农家乐
+
+          <div style="display: flex">
+            <div style="width: 70%">
+              <!--    第三块 扶贫案例-->
+              <div style="text-align: left; color: #19a14b; font-size: 25px; font-weight: 550; margin: 40px 15px">
+                扶贫案例
+              </div>
+              <el-row :gutter="20">
+                <el-col :span="6" style="margin-bottom: 50px" v-for="item in agritainmentData"> <!--分三份 3*8=24 -->
+                  <!--每一列col 都去做一个for循环，放在取名item里面-->
+                  <!--       点击图片就能跳转，在图片上进行操作：  cursor: pointer 鼠标移动到图片上会出现小手指   ;  @click="navTo('/front/agritainmentDetail?id=' + item.id)：点击跳转agritainmentDetail前台页面（记得index.js加路由），传入id -->
+                  <img :src="item.img" alt=""
+                       style="width: 100%; height: 180px; border-radius: 10px; cursor: pointer;"
+                       @click="navTo('/front/agritainmentDetail?id=' + item.id)">
+                  <div style="text-align: center; font-size: 16px; font-weight: 530; margin-top: 10px">
+                    {{ item.name }}
+                  </div>
+                </el-col>
+              </el-row>
+
             </div>
-            <div>
-                <el-row :gutter="20">
-                    <el-col :span="8" style="margin-bottom: 50px" v-for="item in agritainmentData"> <!--分三份 3*8=24 -->
-                        <!--每一列col 都去做一个for循环，放在取名item里面-->
-                        <!--       点击图片就能跳转，在图片上进行操作：  cursor: pointer 鼠标移动到图片上会出现小手指   ;  @click="navTo('/front/agritainmentDetail?id=' + item.id)：点击跳转agritainmentDetail前台页面（记得index.js加路由），传入id -->
-                        <img :src="item.img" alt=""
-                             style="width: 100%; height: 180px; border-radius: 10px; cursor: pointer;"
-                             @click="navTo('/front/agritainmentDetail?id=' + item.id)">
-                        <div style="text-align: center; font-size: 16px; font-weight: 530; margin-top: 10px">
-                            {{ item.name }}
-                        </div>
-                    </el-col>
-                </el-row>
+            <div style="width: 30%">
+              <!--    第四块 公共栏-->
+              <div style="text-align: right; color: #19a14b; font-size: 25px; font-weight: 550; margin: 40px 40px 30px 0;padding-right: 20px">
+                公告栏
+              </div>
             </div>
+          </div>
+
         </div>
     </div>
 </template>

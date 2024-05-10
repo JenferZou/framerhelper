@@ -1,9 +1,15 @@
 <template>
   <div class="main-content">
     <el-card style="width: 50%; margin: 30px auto">
-      <div style="text-align: right; margin-bottom: 20px">
-        <el-button type="primary" @click="updatePassword">修改密码</el-button>
+      <div style="display: flex;justify-content: space-between;">
+        <div style="text-align: left; margin-bottom: 20px">
+          <el-button type="primary" @click="$router.push('/')">返回主页</el-button>
+        </div>
+        <div style="text-align: right; margin-bottom: 20px">
+          <el-button type="primary" @click="updatePassword">修改密码</el-button>
+        </div>
       </div>
+
       <el-form :model="user" label-width="80px" style="padding-right: 20px">
         <div style="margin: 15px; text-align: center">
 <!--        element官方控件，点击会跳出弹窗选择文件
@@ -97,6 +103,8 @@ export default {
     this.getPerson()
   },
   methods: {
+    /* 返回主页 */
+
     /*
     * 从数据库拿数据，不从缓存拿，缓存不太安全
     * 尝试从服务器获取与特定ID关联的用户信息，如果成功则更新本地存储中的用户数据，并在页面上显示一个消息；如果失败，则在页面上显示一个错误消息。

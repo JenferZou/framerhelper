@@ -22,8 +22,8 @@
             <div>{{ user.name ||  '管理员' }}</div>
           </div>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item @click.native="goToPerson">个人信息</el-dropdown-item>
-            <el-dropdown-item @click.native="$router.push('/admin/password')">修改密码</el-dropdown-item>
+<!--            <el-dropdown-item @click.native="goToPerson">个人信息</el-dropdown-item>-->
+            <el-dropdown-item @click.native="$router.push('/')">前往前台</el-dropdown-item>
             <el-dropdown-item @click.native="logout">退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
@@ -46,8 +46,10 @@
             <el-menu-item index="/admin/notice">公告信息</el-menu-item>
             <el-menu-item index="/admin/information">扶贫资讯</el-menu-item>
             <el-menu-item index="/admin/policy">扶贫政策</el-menu-item>
-            <el-menu-item index="/admin/comment">政策评论</el-menu-item>
+            <el-menu-item index="/admin/agritainment">农家乐信息</el-menu-item>
+<!--            <el-menu-item index="/admin/comment">政策评论</el-menu-item>-->
           </el-submenu>
+
 <!--          <el-submenu index="apply">-->
 <!--            <template slot="title">-->
 <!--              <i class="el-icon-s-claim"></i><span>审核申请</span>-->
@@ -55,12 +57,13 @@
 <!--            <el-menu-item index="/admin/poorApply">贫困户申请</el-menu-item>-->
 <!--            <el-menu-item index="/admin/projectApply">扶贫项目申请</el-menu-item>-->
 <!--          </el-submenu>-->
+
           <el-submenu index="user">
             <template slot="title">
               <i class="el-icon-s-custom"></i><span>用户管理</span>
             </template>
             <el-menu-item index="/admin">管理员信息</el-menu-item>
-            <el-menu-item index="/admin/user">用户信息</el-menu-item>
+<!--            <el-menu-item index="/admin/user">用户信息</el-menu-item>-->
           </el-submenu>
         </el-menu>
       </div>
@@ -98,7 +101,8 @@ export default {
     },
     logout() {
       localStorage.removeItem('xm-user')
-      this.$router.push('/login')
+      this.$router.push('/')
+      location.reload();
     }
   }
 }

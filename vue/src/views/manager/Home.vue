@@ -12,7 +12,7 @@
             <el-timeline-item v-for="item in notices" :key="item.id" :timestamp="item.time">
               <el-popover
                   placement="right"
-                  width="200"
+                  width="200px"
                   trigger="hover"
                   :content="item.content">
                 <span slot="reference">{{ item.title }}</span>

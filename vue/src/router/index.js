@@ -16,14 +16,24 @@ const routes = [
         component: () => import('../views/Manager.vue'),
         redirect: '/front/home',  // 重定向到登录页面
         children: [
-            {path: 'admin/home', name: 'Home', meta: {name: '系统首页'}, component: () => import('../views/manager/Home')},
+            {
+                path: 'admin/home',
+                name: 'Home',
+                meta: {name: '系统首页'},
+                component: () => import('../views/manager/Home')
+            },
             {
                 path: 'admin',
                 name: 'Admin',
                 meta: {name: '管理员信息'},
                 component: () => import('../views/manager/Admin')
             },
-            {path: '/admin/user', name: 'User', meta: {name: '用户信息'}, component: () => import('../views/manager/User')},
+            {
+                path: '/admin/user',
+                name: 'User',
+                meta: {name: '用户信息'},
+                component: () => import('../views/manager/User')
+            },
             {
                 path: 'admin/adminPerson',
                 name: 'AdminPerson',
@@ -54,19 +64,24 @@ const routes = [
                 meta: {name: '扶贫政策'},
                 component: () => import('../views/manager/Policy')
             },
-/*            {
+            {
                 path: 'admin/agritainment',
                 name: 'Agritainment',
                 meta: {name: '农家乐信息'},
                 component: () => import('../views/manager/Agritainment')
             },
-            {path: '/admin/goods', name: 'Goods', meta: {name: '扶贫商品'}, component: () => import('../views/manager/Goods')},
+            {
+                path: '/admin/goods',
+                name: 'Goods',
+                meta: {name: '扶贫商品'},
+                component: () => import('../views/manager/Goods')
+            },
             {
                 path: 'admin/orders',
                 name: 'Orders',
                 meta: {name: '订单信息'},
                 component: () => import('../views/manager/Orders')
-            },*/
+            },
             {
                 path: 'admin/poorApply',
                 name: 'PoorApply',
@@ -111,7 +126,7 @@ const routes = [
                 meta: {name: '政策详情'},
                 component: () => import('../views/front/PolicyDetail')
             },
-/*            {
+            {
                 path: 'agritainmentDetail',
                 name: 'AgritainmentDetail',
                 meta: {name: '农家乐详情'},
@@ -122,7 +137,7 @@ const routes = [
                 name: 'Orders',
                 meta: {name: '订单信息'},
                 component: () => import('../views/front/Orders')
-            },*/
+            },
             {path: 'apply', name: 'Apply', meta: {name: '我的申请'}, component: () => import('../views/front/Apply')},
             {
                 path: 'praise',
@@ -145,17 +160,17 @@ const router = new VueRouter({
 })
 
 //如果跳转路径包含/admin，则验证该用户是否具有是管理员，如果是就可以跳转，不是就跳转到*
-router.beforeEach((to ,from, next) => {
-let user = JSON.parse(localStorage.getItem("xm-user") || '{}');
-if(to.path.indexOf('/admin') !== -1){
-    if(user.role === 'ADMIN'){
+router.beforeEach((to, from, next) => {
+    let user = JSON.parse(localStorage.getItem("xm-user") || '{}');
+    if (to.path.indexOf('/admin') !== -1) {
+        if (user.role === 'ADMIN') {
+            next()
+        } else {
+            next('/noauth')
+        }
+    } else {
         next()
-    }else{
-        next('/noauth')
     }
-}else{
-    next()
-}
 })
 
 

@@ -6,7 +6,7 @@
     <div class="front-header">
       <div class="front-header-left">
         <img src="@/assets/imgs/logo.png" alt="">
-        <div class="title" @click="navTo('/front/home')">助农扶贫网</div>
+        <div class="title" @click="navTo('/front/home')">扶贫信息网</div>
       </div>
       <div class="front-header-center">
 <!--        <div class="front-header-nav">-->
@@ -19,7 +19,7 @@
       <div class="front-header-right">
         <div v-if="!user.username">
           <el-button @click="$router.push('/login')">登录</el-button>
-          <el-button @click="$router.push('/register')">注册</el-button>
+<!--          <el-button @click="$router.push('/register')">注册</el-button>-->
         </div>
         <div v-else>
           <el-dropdown>
@@ -30,14 +30,14 @@
               </div>
             </div>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>
-                <div style="text-decoration: none" @click="navTo('/front/praise')">历史点赞</div>
-              </el-dropdown-item>
+<!--              <el-dropdown-item>-->
+<!--                <div style="text-decoration: none" @click="navTo('/front/praise')">历史点赞</div>-->
+<!--              </el-dropdown-item>-->
 <!--              <el-dropdown-item>-->
 <!--                <div style="text-decoration: none" @click="navTo('/front/apply')">我的申请</div>-->
 <!--              </el-dropdown-item>-->
               <el-dropdown-item>
-                <div style="text-decoration: none" @click="navTo('/front/person')">个人中心</div>
+                <div style="text-decoration: none" @click="$router.push('/admin')">后台中心</div>
               </el-dropdown-item>
               <el-dropdown-item>
                 <div style="text-decoration: none" @click="logout">退出</div>
@@ -50,6 +50,15 @@
     <!--主体-->
     <div class="main-body">
       <router-view ref="child" @update:user="updateUser" />
+    </div>
+    <div class="footer">
+      <div class="footerLeft">
+        Copyrights xxx | All Rights Reserved
+      </div>
+      <div style="flex: 1"></div>
+      <div class="footerRight">
+        备案号:xxxxxxx
+      </div>
     </div>
   </div>
 
@@ -109,7 +118,8 @@ export default {
     // 退出登录
     logout() {
       localStorage.removeItem("xm-user");
-      this.$router.push("/login");
+      this.$router.push("/");
+      location.reload();
     },
 
     navTo(url) {
@@ -122,4 +132,27 @@ export default {
 
 <style scoped>
   @import "@/assets/css/front.css";
+  .footer{
+    height: 50px;
+    display: flex;
+    background-color: white;
+  }
+
+  .footerLeft{
+    margin-top: 15px;
+    margin-left: 40px;
+    font-size: 15px;
+    color: #5c6c82;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .footerRight{
+    margin-top: 15px;
+    margin-right: 80px;
+    font-size: 15px;
+    color: #5c6c82;
+    align-items: center;
+    justify-content: flex-end;
+  }
 </style>
