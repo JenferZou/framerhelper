@@ -21,7 +21,7 @@
           </el-timeline>
         </div>
       </div>
-      <div style="width: 40%;margin-left: 20px;height: 400px" id="chart"></div>
+<!--      <div style="width: 40%;margin-left: 20px;height: 400px" id="chart"></div>-->
     </div>
   </div>
 </template>
@@ -62,13 +62,13 @@ export default {
     this.$request.get('/notice/selectAll').then(res => {
       this.notices = res.data || []
     });
-    this.$request.get('/user/countUser').then(res => {
+    /*this.$request.get('/user/countUser').then(res => {
       console.log(res)
       this.countU=res
       this.chartDom = document.getElementById("chart");
       this.myChart = echarts.init(this.chartDom);
       this.initCharts();
-    });
+    });*/
   },
   mounted () {
     this.$nextTick(() => {

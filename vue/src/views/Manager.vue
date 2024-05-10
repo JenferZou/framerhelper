@@ -5,7 +5,7 @@
     <div class="manager-header">
       <div class="manager-header-left">
         <img src="@/assets/imgs/logo.png" />
-        <div class="title">助农扶贫网</div>
+        <div class="title">扶贫信息网</div>
       </div>
 
       <div class="manager-header-center">
@@ -46,7 +46,7 @@
             <el-menu-item index="/admin/notice">公告信息</el-menu-item>
             <el-menu-item index="/admin/information">扶贫资讯</el-menu-item>
             <el-menu-item index="/admin/policy">扶贫政策</el-menu-item>
-            <el-menu-item index="/admin/agritainment">农家乐信息</el-menu-item>
+            <el-menu-item index="/admin/agritainment">扶贫案例</el-menu-item>
 <!--            <el-menu-item index="/admin/comment">政策评论</el-menu-item>-->
           </el-submenu>
 
