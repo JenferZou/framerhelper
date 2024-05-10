@@ -29,7 +29,7 @@
                                 <!--              这里flex占一份，下面给定，剩下的全是这一部分的-->
                                 <!--              需要文字过长时自动省略，调用方法函数，取名overflowShow-->
                                 <!--渲染：扶贫资讯数据 别名informationData-->
-                                <div style="flex: 1; font-size: 17px; width: 0; cursor: url(https://ik.imagekit.io/nicexl/cursor/link.cur),default !important;"
+                                <div style="flex: 1; font-size: 17px; width: 0;"
                                      class="overflowShow" @click="navTo('/front/informationDetail?id=' + item.id)">
                                     {{ item.name }}
                                 </div>
@@ -41,7 +41,7 @@
                         <!--         text-align: right" ； 文字靠右-->
                         <el-tab-pane label="扶贫政策" name="second">
                             <div style="display: flex; line-height: 48px; height: 48px" v-for="item in policyData">
-                                <div style="flex: 1; font-size: 17px; width: 0; cursor: url(https://ik.imagekit.io/nicexl/cursor/link.cur),default !important;"
+                                <div style="flex: 1; font-size: 17px; width: 0;"
                                      class="overflowShow" @click="navTo('/front/policyDetail?id=' + item.id)">
                                     {{ item.name }}
                                 </div>

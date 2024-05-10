@@ -33,9 +33,9 @@
               <el-dropdown-item>
                 <div style="text-decoration: none" @click="navTo('/front/praise')">历史点赞</div>
               </el-dropdown-item>
-              <el-dropdown-item>
-                <div style="text-decoration: none" @click="navTo('/front/apply')">我的申请</div>
-              </el-dropdown-item>
+<!--              <el-dropdown-item>-->
+<!--                <div style="text-decoration: none" @click="navTo('/front/apply')">我的申请</div>-->
+<!--              </el-dropdown-item>-->
               <el-dropdown-item>
                 <div style="text-decoration: none" @click="navTo('/front/person')">个人中心</div>
               </el-dropdown-item>

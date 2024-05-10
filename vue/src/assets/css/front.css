@@ -24,7 +24,7 @@
 .front-header-left .title {
     flex: 1;
     color: #355476;
-    cursor: url(https://ik.imagekit.io/nicexl/cursor/link.cur),default !important;
+    /*cursor: url(https://ik.imagekit.io/nicexl/cursor/link.cur),default !important;*/
     margin-left: 10px;
     font-size: 24px;
     font-weight: bold;

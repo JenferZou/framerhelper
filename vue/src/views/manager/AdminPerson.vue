@@ -94,7 +94,6 @@ export default {
 }
 /deep/.avatar-uploader .el-upload {
   border: 1px dashed #d9d9d9;
-  cursor: url(https://ik.imagekit.io/nicexl/cursor/link.cur),default !important;
   position: relative;
   overflow: hidden;
   border-radius: 50%;

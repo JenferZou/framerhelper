@@ -127,12 +127,12 @@ export default {
         if (res.code === '200') {
           this.$message.success('充值成功')/*成功提示*/
           localStorage.setItem("xm-user", JSON.stringify(this.user))/*把充值后的数据塞到缓存里面，相当于数据更新*/
-//用于使余额实时化显示
-// localStorage.setItem() 接收两个参数：
-//   1. 键名 ("xm-user")：用于后续从本地存储检索该数据时使用的标识符。
-//   2. 值 (JSON.stringify(this.user))：将 this.user 对象通过 JSON.stringify() 方法序列化成JSON字符串，
-//      因为本地存储只能处理字符串类型的数据，不能直接存储JavaScript对象。
-// 当需要读取这个用户数据时，可以通过调用 localStorage.getItem("xm-user") 并使用 JSON.parse() 解析返回的字符串来还原成原始对象。*/
+      //用于使余额实时化显示
+      // localStorage.setItem() 接收两个参数：
+      //   1. 键名 ("xm-user")：用于后续从本地存储检索该数据时使用的标识符。
+      //   2. 值 (JSON.stringify(this.user))：将 this.user 对象通过 JSON.stringify() 方法序列化成JSON字符串，
+      //      因为本地存储只能处理字符串类型的数据，不能直接存储JavaScript对象。
+      // 当需要读取这个用户数据时，可以通过调用 localStorage.getItem("xm-user") 并使用 JSON.parse() 解析返回的字符串来还原成原始对象。*/
           this.fromVisible = false /*关掉充值对话框*/
         } else {
           this.$message.error(res.msg)
@@ -191,7 +191,7 @@ export default {
 }
 /deep/.avatar-uploader .el-upload {
   border: 1px dashed #d9d9d9;
-  cursor: url(https://ik.imagekit.io/nicexl/cursor/link.cur),default !important;
+  /*cursor: url(https://ik.imagekit.io/nicexl/cursor/link.cur),default !important;*/
   position: relative;
   overflow: hidden;
   border-radius: 50%;

@@ -6,8 +6,8 @@
         <div style="margin-top: 20px; color: #666666">
           发布时间：{{ policyData.time }}
           <span style="margin: 0 30px">点赞： {{ policyData.num }}</span>
-          <img v-if="isPraise" src="@/assets/imgs/praise_yes.png" alt="" style="width: 25px; cursor: url(https://ik.imagekit.io/nicexl/cursor/link.cur),default !important;" @click="praise">
-          <img v-else src="@/assets/imgs/praise_no.png" alt="" style="width: 25px; cursor: url(https://ik.imagekit.io/nicexl/cursor/link.cur),default !important;" @click="praise">
+          <img v-if="isPraise" src="@/assets/imgs/praise_yes.png" alt="" style="width: 25px;" @click="praise">
+          <img v-else src="@/assets/imgs/praise_no.png" alt="" style="width: 25px;" @click="praise">
         </div>
       </div>
       <div v-html="policyData.content" class="w-e-text w-e-text-container" style="margin-top: 30px"></div>

@@ -48,13 +48,13 @@
             <el-menu-item index="/admin/policy">扶贫政策</el-menu-item>
             <el-menu-item index="/admin/comment">政策评论</el-menu-item>
           </el-submenu>
-          <el-submenu index="apply">
-            <template slot="title">
-              <i class="el-icon-s-claim"></i><span>审核申请</span>
-            </template>
-            <el-menu-item index="/admin/poorApply">贫困户申请</el-menu-item>
-            <el-menu-item index="/admin/projectApply">扶贫项目申请</el-menu-item>
-          </el-submenu>
+<!--          <el-submenu index="apply">-->
+<!--            <template slot="title">-->
+<!--              <i class="el-icon-s-claim"></i><span>审核申请</span>-->
+<!--            </template>-->
+<!--            <el-menu-item index="/admin/poorApply">贫困户申请</el-menu-item>-->
+<!--            <el-menu-item index="/admin/projectApply">扶贫项目申请</el-menu-item>-->
+<!--          </el-submenu>-->
           <el-submenu index="user">
             <template slot="title">
               <i class="el-icon-s-custom"></i><span>用户管理</span>
