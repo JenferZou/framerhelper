@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cd28724-2147-4286-9d83-d16b345895b2" name="Changes" comment="修改下扶贫案例的数量">
-      <change afterPath="$PROJECT_DIR$/../vue/src/views/front/InformationList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/views/front/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/views/front/Home.vue" afterDir="false" />
-    </list>
+    <list default="true" id="8cd28724-2147-4286-9d83-d16b345895b2" name="Changes" comment="修改公告栏的查询" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +78,7 @@
       <workItem from="1715312763674" duration="934000" />
       <workItem from="1715314413280" duration="2250000" />
       <workItem from="1715330139868" duration="9587000" />
-      <workItem from="1715386777303" duration="3657000" />
+      <workItem from="1715386777303" duration="8257000" />
     </task>
     <task id="LOCAL-00001" summary="修改下扶贫案例的数量">
       <created>1715348236665</created>
@@ -90,7 +87,28 @@
       <option name="project" value="LOCAL" />
       <updated>1715348236665</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加了扶贫政策接口">
+      <created>1715395178057</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715395178058</updated>
+    </task>
+    <task id="LOCAL-00003" summary="添加了扶贫资讯接口">
+      <created>1715395469141</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715395469141</updated>
+    </task>
+    <task id="LOCAL-00004" summary="修改公告栏的查询">
+      <created>1715396052399</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715396052399</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +127,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改下扶贫案例的数量" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改下扶贫案例的数量" />
+    <MESSAGE value="添加了扶贫政策接口" />
+    <MESSAGE value="添加了扶贫资讯接口" />
+    <MESSAGE value="修改公告栏的查询" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改公告栏的查询" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/mapper/NoticeMapper.java</url>
+          <line>33</line>
+          <properties class="com.example.mapper.NoticeMapper" method="selectAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
