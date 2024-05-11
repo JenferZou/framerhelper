@@ -42,7 +42,7 @@ public class JwtInterceptor implements HandlerInterceptor {
         ||uri.contains("/agritainment/top6")||uri.contains("/goods/selectAll")||uri.contains("/information/selectById/")
         ||uri.contains("/policy/selectById/")||uri.contains("/praise/selectAll")||uri.contains("/comment/selectByPolicyId")
                 ||uri.contains("/agritainment/selectById") || uri.equals("/doc.html") || uri.contains("/policy/selectPageList")
-                || uri.contains("/poorapply/selectPageList")
+                || uri.contains("/information/selectAllPage")
         )
             return true;
 

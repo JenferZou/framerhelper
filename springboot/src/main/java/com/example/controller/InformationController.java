@@ -68,7 +68,7 @@ public class InformationController {
      * 查询所有
      */
     @GetMapping("/selectAll")
-    public Result selectAll(Information information ) {
+    public Result selectAll(Information information) {
         List<Information> list = informationService.selectAll(information);
         return Result.success(list);
     }
@@ -87,6 +87,17 @@ public class InformationController {
                              @RequestParam(defaultValue = "1") Integer pageNum,
                              @RequestParam(defaultValue = "10") Integer pageSize) {
         PageInfo<Information> page = informationService.selectPage(information, pageNum, pageSize);
+        return Result.success(page);
+    }
+
+    /**
+     * 分页数据
+     */
+    @GetMapping("/selectAllPage")
+    public Result selectAllPage(
+            @RequestParam(defaultValue = "1") Integer pageNum,
+            @RequestParam(defaultValue = "10") Integer pageSize) {
+        PageInfo<Information> page = informationService.selectPage(null, pageNum, pageSize);
         return Result.success(page);
     }
 
