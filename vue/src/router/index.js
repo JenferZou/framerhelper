@@ -161,7 +161,8 @@ const routes = [
     {path: '/login', name: 'Login', meta: {name: '登录'}, component: () => import('../views/Login.vue')},
     {path: '/register', name: 'Register', meta: {name: '注册'}, component: () => import('../views/Register.vue')},
     {path: '*', name: 'NotFound', meta: {name: '无法访问'}, component: () => import('../views/404.vue')},
-    {path: '/noauth', name: 'NoAuth', meta: {name: '无权限'}, component: () => import('../views/manager/403')},
+    /*{path: '/noauth', name: 'NoAuth', meta: {name: '无权限'}, component: () => import('../views/manager/403')},*/
+    {path: '/noauth', name: 'NoAuth', meta: {name: '无权限'}, component: () => import('../views/Login.vue')},
 ]
 
 const router = new VueRouter({

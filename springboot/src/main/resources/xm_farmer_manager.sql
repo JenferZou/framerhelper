@@ -13,6 +13,7 @@
 
  Date: 18/01/2024 09:04:53
 */
+create databases farmer;
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;

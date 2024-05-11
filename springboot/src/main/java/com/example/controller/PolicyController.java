@@ -102,7 +102,8 @@ public class PolicyController {
     @ApiOperation(value = "扶贫默认查询")
     @GetMapping("/selectPageList")
     public Result selectPageList(@RequestParam(defaultValue = "1") Integer pageNum, @RequestParam(defaultValue = "10") Integer pageSize){
-        return policyService.selectPageList(pageNum,pageSize);
+
+        return Result.success(policyService.selectPage(null,pageNum,pageSize));
     }
 
 }

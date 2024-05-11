@@ -24,7 +24,7 @@
                                     }}</p>
                             </el-col>
                             <el-col :span="2">
-                            <span class="card-time">{{ article.time }}</span>
+                                <span class="card-time">{{ article.time }}</span>
                             </el-col>
                         </el-row>
                     </div>
@@ -92,12 +92,12 @@ export default {
         },
 
         // 假设的获取数据方法
-         fetchData() {
-            this.$request.get('/information/selectAllPage', {
+        fetchData() {
+            this.$request.get('/agritainment/selectAllPage', {
                 params: {
-                        pageNum: this.currentPage,
-                        pageSize: this.pageSize,
-                    },}
+                    pageNum: this.currentPage,
+                    pageSize: this.pageSize,
+                },}
             ).then(res => {
                 console.log(res)
                 if (res.code === '200') {
@@ -114,8 +114,8 @@ export default {
                     this.$message.error(res.msg)
                 }
             })
-            },
         },
+    },
 
 
 
