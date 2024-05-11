@@ -59,6 +59,7 @@
         <el-button type="primary" @click="save">确 定</el-button>
       </div>
     </el-dialog>
+
     <el-dialog title="扶贫资讯" :visible.sync="editorVisible" width="50%" :close-on-click-modal="false" destroy-on-close>
       <div v-html="this.viewContent" class="w-e-text"></div>
     </el-dialog>

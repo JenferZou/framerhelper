@@ -119,6 +119,11 @@ const routes = [
                 name: 'InformationDetail',
                 meta: {name: '资讯详情'},
                 component: () => import('../views/front/InformationDetail')
+            },{
+                path: 'informationList',
+                name: 'InformationList',
+                meta: {name:'资讯列表'},
+                component: () => import('../views/front/InformationList')
             },
             {
                 path: 'policyDetail',

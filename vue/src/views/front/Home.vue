@@ -21,11 +21,12 @@
             </el-carousel-item>
           </el-carousel>
         </div> <!--这里flex占一份 也可以width：50%-->
+
         <!--     第二块 右 扶贫资讯 Element：Tabs标签页 -->
         <div style="width: 50%; height: 330px; margin-left: 17px">
           <el-tabs v-model="activeName"> <!--activeName与下面选项的name绑定 ; @tab-click="handleClick"是点击切换后的函数-->
             <el-tab-pane label="扶贫资讯" name="first">
-              <div style="display: flex; line-height: 48px; height: 48px" v-for="item in informationData">
+              <div style="display: flex; line-height: 45px; height: 45px" v-for="item in informationData">
                 <!--              这里flex占一份，下面给定，剩下的全是这一部分的-->
                 <!--              需要文字过长时自动省略，调用方法函数，取名overflowShow-->
                 <!--渲染：扶贫资讯数据 别名informationData-->
@@ -37,16 +38,29 @@
                   {{ item.time }}
                 </div>
               </div>
+              <div style="display: flex; line-height: 35px; height: 35px;margin-right: 12px">
+                <div style="flex: 1"></div>
+                <div style="width: 150px; text-align: right; color: red; font-size: 15px">
+                  <a class="seeMore" @click="navTo('/front/informationList')">查看更多</a>
+                </div>
+              </div>
             </el-tab-pane>
+
             <!--         text-align: right" ； 文字靠右-->
             <el-tab-pane label="扶贫政策" name="second">
-              <div style="display: flex; line-height: 48px; height: 48px" v-for="item in policyData">
+              <div style="display: flex; line-height: 45px; height: 45px" v-for="item in policyData">
                 <div style="flex: 1; font-size: 17px; width: 0;"
                      class="overflowShow" @click="navTo('/front/policyDetail?id=' + item.id)">
                   {{ item.name }}
                 </div>
                 <div style="width: 150px; text-align: right; color: #a9a9b8; font-size: 15px">
                   {{ item.time }}
+                </div>
+              </div>
+              <div style="display: flex; line-height: 35px; height: 35px;margin-right: 12px">
+                <div style="flex: 1"></div>
+                <div style="width: 150px; text-align: right; color: red; font-size: 15px;">
+                  <a class="seeMore">查看更多</a>
                 </div>
               </div>
             </el-tab-pane>
@@ -81,7 +95,7 @@
               style="text-align: right; color: #19a14b; font-size: 25px; font-weight: 550; margin: 40px 40px 30px 0;padding-right: 60px">
             公告栏
           </div>
-          <div style="margin-left: 50px">
+          <div style="margin-left: 80px">
             <el-timeline reverse slot="reference">
               <el-timeline-item v-for="item in notices" :key="item.id" :timestamp="item.time">
                 <el-popover
@@ -180,5 +194,9 @@ export default {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.seeMore:hover {
+  color: lightcoral;
+  cursor: pointer;
 }
 </style>
