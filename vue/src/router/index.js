@@ -132,6 +132,12 @@ const routes = [
                 component: () => import('../views/front/PolicyDetail')
             },
             {
+                path: 'policyList',
+                name: 'PolicyList',
+                meta: {name:'政策列表'},
+                component: () => import('../views/front/PolicyList')
+            },
+            {
                 path: 'agritainmentDetail',
                 name: 'AgritainmentDetail',
                 meta: {name: '农家乐详情'},

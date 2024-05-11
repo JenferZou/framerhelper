@@ -60,7 +60,7 @@
               <div style="display: flex; line-height: 35px; height: 35px;margin-right: 12px">
                 <div style="flex: 1"></div>
                 <div style="width: 150px; text-align: right; color: red; font-size: 15px;">
-                  <a class="seeMore">查看更多</a>
+                  <a class="seeMore" @click="navTo('/front/policyList')">查看更多</a>
                 </div>
               </div>
             </el-tab-pane>

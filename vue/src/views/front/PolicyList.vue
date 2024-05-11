@@ -13,7 +13,7 @@
                                     }}</p>
                             </el-col>
                             <el-col :span="2">
-                            <span class="card-time">{{ article.date }}</span>
+                                <span class="card-time">{{ article.date }}</span>
                             </el-col>
                         </el-row>
                     </div>
@@ -36,7 +36,7 @@
 <script>
 
 export default {
-    name: "InformationList",
+    name: "PolicyList",
     data() {
         return {
             articles: [{
