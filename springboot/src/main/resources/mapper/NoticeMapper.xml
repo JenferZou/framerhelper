@@ -19,7 +19,7 @@
             <if test="time != null"> and time= #{time}</if>
             <if test="user != null"> and user= #{user}</if>
         </where>
-        order by id desc
+        order by id desc limit 8
     </select>
 
     <select id="selectById" resultType="com.example.entity.Notice">

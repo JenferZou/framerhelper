@@ -64,7 +64,7 @@ public class NoticeController {
     }
 
     /**
-     * 查询所有
+     * 查询所有 (改为最新 10 条)
      */
     @GetMapping("/selectAll")
     public Result selectAll(Notice notice ) {

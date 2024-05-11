@@ -80,7 +80,7 @@ public class AgritainmentController {
     }
 
     /**
-     * 分页查询
+     * 分页查询 ----- 后台用的
      */
     @GetMapping("/selectPage")
     public Result selectPage(Agritainment agritainment,
@@ -90,4 +90,16 @@ public class AgritainmentController {
         return Result.success(page);
     }
 
+    /**
+     * 前台展示用的
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    @GetMapping("/selectAllPage")
+    public Result selectPage(@RequestParam(defaultValue = "1") Integer pageNum,
+                             @RequestParam(defaultValue = "10") Integer pageSize) {
+        PageInfo<Agritainment> page = agritainmentService.selectPage(null, pageNum, pageSize);
+        return Result.success(page);
+    }
 }
