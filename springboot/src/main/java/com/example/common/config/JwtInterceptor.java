@@ -41,9 +41,12 @@ public class JwtInterceptor implements HandlerInterceptor {
         if(uri.contains("/notice/selectAll")||uri.contains("/information/top6")||uri.contains("/policy/top6")
         ||uri.contains("/agritainment/top6")||uri.contains("/goods/selectAll")||uri.contains("/information/selectById/")
         ||uri.contains("/policy/selectById/")||uri.contains("/praise/selectAll")||uri.contains("/comment/selectByPolicyId")
-                ||uri.contains("/agritainment/selectById")
+                ||uri.contains("/agritainment/selectById") || uri.equals("/doc.html") || uri.contains("/policy/selectPageList")
+                || uri.contains("/poorapply/selectPageList")
         )
             return true;
+
+        System.out.println(uri);
 
         String token = request.getHeader(Constants.TOKEN);
         if (ObjectUtil.isEmpty(token)) {

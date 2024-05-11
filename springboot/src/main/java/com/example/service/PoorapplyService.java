@@ -92,4 +92,9 @@ public class PoorapplyService {
         return PageInfo.of(list);
     }
 
+    public PageInfo<Poorapply> selectPageList(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<Poorapply> list = poorapplyMapper.selectAllList();
+        return PageInfo.of(list);
+    }
 }

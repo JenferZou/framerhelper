@@ -1,5 +1,6 @@
 package com.example.mapper;
 
+import com.example.common.Result;
 import com.example.entity.Policy;
 import org.apache.ibatis.annotations.Select;
 
@@ -37,4 +38,7 @@ public interface PolicyMapper {
 
     @Select("select * from policy order by id desc limit 6")
     List<Policy> selectTop6();
+
+    @Select("select * from policy order by id desc")
+    List<Policy> selectAllInfo();
 }

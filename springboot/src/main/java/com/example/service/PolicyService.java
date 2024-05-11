@@ -1,6 +1,7 @@
 package com.example.service;
 
 import cn.hutool.core.date.DateUtil;
+import com.example.common.Result;
 import com.example.entity.Policy;
 import com.example.mapper.PolicyMapper;
 import com.github.pagehelper.PageHelper;
@@ -76,5 +77,11 @@ public class PolicyService {
 
     public List<Policy> top6() {
         return policyMapper.selectTop6();
+    }
+
+    public Result selectPageList(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<Policy> page = policyMapper.selectAllInfo();
+        return Result.success(page);
     }
 }

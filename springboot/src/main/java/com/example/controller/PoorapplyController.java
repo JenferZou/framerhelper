@@ -93,4 +93,10 @@ public class PoorapplyController {
         return Result.success(page);
     }
 
+    @GetMapping("/selectPageList")
+    public Result selectAllPage(@RequestParam(defaultValue = "1") Integer pageNum,
+                                @RequestParam(defaultValue = "10") Integer pageSize) {
+        PageInfo<Poorapply> page = poorapplyService.selectPageList(pageNum, pageSize);
+        return Result.success(page);
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.mapper;
 
 import com.example.entity.Poorapply;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -34,4 +35,6 @@ public interface PoorapplyMapper {
     */
     List<Poorapply> selectAll(Poorapply poorapply);
 
+    @Select("select * from poorapply order by id desc")
+    List<Poorapply> selectAllList();
 }

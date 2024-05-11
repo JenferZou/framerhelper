@@ -4,6 +4,8 @@ import com.example.common.Result;
 import com.example.entity.Policy;
 import com.example.service.PolicyService;
 import com.github.pagehelper.PageInfo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,6 +16,7 @@ import java.util.List;
  **/
 @RestController
 @RequestMapping("/policy")
+@Api(tags = "扶贫接口")
 public class PolicyController {
 
     @Resource
@@ -88,6 +91,18 @@ public class PolicyController {
                              @RequestParam(defaultValue = "10") Integer pageSize) {
         PageInfo<Policy> page = policyService.selectPage(policy, pageNum, pageSize);
         return Result.success(page);
+    }
+
+    /**
+     * 扶贫数据分页展示接口
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    @ApiOperation(value = "扶贫默认查询")
+    @GetMapping("/selectPageList")
+    public Result selectPageList(@RequestParam(defaultValue = "1") Integer pageNum, @RequestParam(defaultValue = "10") Integer pageSize){
+        return policyService.selectPageList(pageNum,pageSize);
     }
 
 }
