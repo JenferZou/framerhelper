@@ -178,6 +178,7 @@ router.beforeEach((to, from, next) => {
         if (user.role === 'ADMIN') {
             next()
         } else {
+            showMessage("无权限，请先登录!");
             next('/noauth')
         }
     } else {
@@ -185,5 +186,8 @@ router.beforeEach((to, from, next) => {
     }
 })
 
+function showMessage(message) {
+    Vue.prototype.$message.info(message);
+}
 
 export default router
